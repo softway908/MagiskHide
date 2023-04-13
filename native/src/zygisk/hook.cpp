@@ -565,7 +565,7 @@ void HookContext::app_specialize_pre() {
 void HookContext::app_specialize_post() {
     run_modules_post();
     if (info_flags & PROCESS_IS_MAGISK_APP) {
-        setenv("ZYGISK_ENABLED", "1", 1);
+        setenv("MYGISK_ENABLED", "1", 1);
     }
 
     // Cleanups
