@@ -25,8 +25,8 @@ static void set_script_env() {
     char new_path[4096];
     sprintf(new_path, "%s:%s", getenv("PATH"), MAGISKTMP.data());
     setenv("PATH", new_path, 1);
-    if (zygisk_enabled)
-        setenv("ZYGISK_ENABLED", "1", 1);
+    if (mygisk_enabled)
+        setenv("MYGISK_ENABLED", "1", 1);
 };
 
 void exec_script(const char *script) {
