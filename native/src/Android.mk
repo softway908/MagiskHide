@@ -63,7 +63,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := zygisk-ld
-LOCAL_SRC_FILES := zygisk/loader.c
+LOCAL_SRC_FILES := mygisk/loader.c
 LOCAL_STRIP_MODE := --strip-all
 include $(BUILD_SHARED_LIBRARY)
 
