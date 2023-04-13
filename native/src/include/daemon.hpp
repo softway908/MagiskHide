@@ -67,7 +67,7 @@ struct module_info {
 #endif
 };
 
-extern bool zygisk_enabled;
+extern bool mygisk_enabled;
 extern int app_process_32;
 extern int app_process_64;
 extern std::vector<module_info> *module_list;
