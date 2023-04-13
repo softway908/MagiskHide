@@ -53,7 +53,7 @@ void denylist_handler(int client, const sock_cred *cred) {
         ls_list(client);
         return;
     case DenyRequest::STATUS:
-        res = (zygisk_enabled && denylist_enforced)
+        res = (mygisk_enabled && denylist_enforced)
                 ? DenyResponse::ENFORCED : DenyResponse::NOT_ENFORCED;
         break;
     default:
