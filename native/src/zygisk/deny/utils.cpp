@@ -32,7 +32,7 @@ static pthread_mutex_t data_lock = PTHREAD_MUTEX_INITIALIZER;
 
 atomic<bool> denylist_enforced = false;
 
-#define do_kill (zygisk_enabled && denylist_enforced)
+#define do_kill (mygisk_enabled && denylist_enforced)
 
 static void rescan_apps() {
     LOGD("denylist: rescanning apps\n");
@@ -357,7 +357,7 @@ int enable_deny() {
         }
 
         // On Android Q+, also kill blastula pool and all app zygotes
-        if (SDK_INT >= 29 && zygisk_enabled) {
+        if (SDK_INT >= 29 && mygisk_enabled) {
             kill_process("usap32", true);
             kill_process("usap64", true);
             kill_process<&proc_context_match>("u:r:app_zygote:s0", true);
