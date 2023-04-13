@@ -37,14 +37,14 @@ LOCAL_SRC_FILES := \
     su/connect.cpp \
     su/pts.cpp \
     su/su_daemon.cpp \
-    zygisk/entry.cpp \
-    zygisk/main.cpp \
-    zygisk/utils.cpp \
-    zygisk/hook.cpp \
-    zygisk/memory.cpp \
-    zygisk/deny/cli.cpp \
-    zygisk/deny/utils.cpp \
-    zygisk/deny/revert.cpp
+    mygisk/entry.cpp \
+    mygisk/main.cpp \
+    mygisk/utils.cpp \
+    mygisk/hook.cpp \
+    mygisk/memory.cpp \
+    mygisk/deny/cli.cpp \
+    mygisk/deny/utils.cpp \
+    mygisk/deny/revert.cpp
 
 LOCAL_LDLIBS := -llog
 LOCAL_LDFLAGS := -Wl,--dynamic-list=src/exported_sym.txt
