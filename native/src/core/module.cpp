@@ -303,7 +303,7 @@ void load_modules() {
     }
 
     // Mount on top of modules to enable zygisk
-    if (zygisk_enabled) {
+    if (mygisk_enabled) {
         string zygisk_bin = MAGISKTMP + "/" ZYGISKBIN;
         mkdir(zygisk_bin.data(), 0);
         mount_zygisk(32)
@@ -376,7 +376,7 @@ static void collect_modules(bool open_zygisk) {
             return;
 
         module_info info;
-        if (zygisk_enabled) {
+        if (mygisk_enabled) {
             // Riru and its modules are not compatible with zygisk
             if (entry->d_name == "riru-core"sv || faccessat(modfd, "riru", F_OK, 0) == 0) {
                 LOGI("%s: ignore\n", entry->d_name);
@@ -408,7 +408,7 @@ static void collect_modules(bool open_zygisk) {
         info.name = entry->d_name;
         module_list->push_back(info);
     });
-    if (zygisk_enabled) {
+    if (mygisk_enabled) {
         bool use_memfd = true;
         auto convert_to_memfd = [&](int fd) -> int {
             if (fd < 0)
