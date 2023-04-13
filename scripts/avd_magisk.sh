@@ -134,7 +134,7 @@ else
 fi
 ln -s ./magisk $MAGISKTMP/su
 ln -s ./magisk $MAGISKTMP/resetprop
-ln -s ./magisk $MAGISKTMP/magiskhide
+ln -s ./magisk $MAGISKTMP/msgiskhide
 ln -s ./magiskpolicy $MAGISKTMP/supolicy
 
 mkdir -p $MAGISKTMP/.magisk/mirror
