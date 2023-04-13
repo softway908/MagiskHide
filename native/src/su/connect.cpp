@@ -116,7 +116,7 @@ static void exec_cmd(const char *action, vector<Extra> &data,
     char user[4];
     ssprintf(user, sizeof(user), "%d", to_user_id(info->eval_uid));
 
-    if (zygisk_enabled) {
+    if (mygisk_enabled) {
 #if defined(__LP64__)
         ssprintf(exe, sizeof(exe), "/proc/self/fd/%d", app_process_64);
 #else
