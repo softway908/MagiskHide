@@ -28,7 +28,7 @@ enum : int {
 
 static int boot_state = FLAG_NONE;
 
-bool zygisk_enabled = false;
+bool mygisk_enabled = false;
 
 /*********
  * Setup *
@@ -401,7 +401,7 @@ static void post_fs_data() {
         exec_common_scripts("post-fs-data");
         db_settings dbs;
         get_db_settings(dbs, ZYGISK_CONFIG);
-        zygisk_enabled = dbs[ZYGISK_CONFIG];
+        mygisk_enabled = dbs[ZYGISK_CONFIG];
         initialize_denylist();
         handle_modules();
     }
